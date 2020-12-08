@@ -2,13 +2,13 @@ specVersion: 0.0.2
 description: xbtc for Ethereum
 repository: https://github.com/graphprotocol/example-subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: xbtc
     network: mainnet
     source:
-      address: '0x9b875f9cA6596255dCee7542075d5Ec919036380'
+      address: "0x9b875f9cA6596255dCee7542075d5Ec919036380"
       abi: xbtc
     mapping:
       kind: ethereum/events
@@ -19,8 +19,8 @@ dataSources:
         - NextRebase
       abis:
         - name: xbtc
-          file: ./abis/xbtc.json
+          file: xbtc/abis/xbtc.json
       eventHandlers:
         - event: LogRebase(indexed uint256,uint256)
           handler: handleLogRebase
-      file: ./src/mapping.ts
+      file: xbtc/xbtc.wasm
